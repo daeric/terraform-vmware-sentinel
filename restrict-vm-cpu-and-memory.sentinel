@@ -23,7 +23,7 @@ cpus_limit = rule {
 memory_limit = rule {
   all vms as _, instances {
     all instances as index, r {
-  	  int(r.applied.memory) <= 8192
+  	  int(r.applied.memory) <= 4096
     }
   }
 }
