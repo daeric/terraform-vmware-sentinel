@@ -7,7 +7,7 @@ import "tfplan-functions" as plan
 
 # CPU and Memory (MB) Limits
 maxCPUs = 4
-maxMemory = 8192
+maxMemory = 4096
 
 # Get all VMs
 allVMs = plan.find_resources("vsphere_virtual_machine")
