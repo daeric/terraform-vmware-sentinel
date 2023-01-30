@@ -10,15 +10,6 @@ get_vms = func() {
 
 vms = get_vms()
 
-# Restrict number of CPUs
-cpus_limit = rule {
-  all vms as _, instances {
-    all instances as index, r {
-  	  int(r.applied.num_cpus) <= 4
-    }
-  }
-}
-
 # Restrict Memory (in MB)
 memory_limit = rule {
   all vms as _, instances {
@@ -29,5 +20,5 @@ memory_limit = rule {
 }
 
 main = rule {
-  (cpus_limit and memory_limit) else true
+  (memory_limit) else true
 }
